@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Puppies</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="puppyApp">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <h1>Puppy App</h1>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered" ng-controller="breedCtrl">
+          <tr ng-repeat="breed in breeds">
+            <td>{{breed.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  
+  <!-- app -->
+  <script src="app.js"></script>
+
+  <!-- controllers -->
+  <script src="controllers/breedsController.js"></script>
+
+  <!-- directives -->
+  <script src = "directives/puppyDirective.js"></script>
+  <script src = "directives/puppyDirective.html"></script>
+
+  <!-- services -->
+  <script src="services/breedsService.js"></script>
+  <script src="services/puppiesService.js"></script>
+  
+  </body>
+</html>

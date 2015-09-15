@@ -6,7 +6,7 @@ puppyApp.factory("breedsService",
     var obj = {};
 
     obj.getAllBreeds = function(){
-      return $http.get('https://pacific-stream-9205.herokuapp.com/puppies.json');
+      return $http.get('https://pacific-stream-9205.herokuapp.com/breeds.json');
     };
 
     return obj;
