@@ -13,17 +13,52 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
   <body ng-app="puppyApp">
+    <div class="container" ng-controller="puppyCtrl">
+      
+      <div class="panel">
+        <div class="panel-heading">
+          <h1>Puppy App</h1>
+        </div>
 
-    <div class="panel">
-      <div class="panel-heading">
-        <h1>Puppy App</h1>
-      </div>
-      <div class="panel-body">
-        <table class="table table-bordered" ng-controller="breedCtrl">
-          <tr ng-repeat="breed in breeds">
-            <td>{{breed.name}}</td>
-          </tr>
-        </table>
+
+        <form class="form-inline">
+          
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" ng-model="puppyName">
+          </div>
+         
+          <div class="form-group">
+            <label>Breed:</label>
+            <select ng-model="puppyBreed">
+              <option value="{{breed.id}}"ng-repeat="breed in breeds">{{breed.name}}</option>
+            </select>
+          </div><br>
+          
+          <button class='btn btn-default' ng-click="submitPuppy()">Submit</button>
+        
+        </form>
+        
+        <div class="panel-body col-md-4">
+          <h3>Breeds</h3>
+          <table class="table table-bordered" >
+            <tr ng-repeat="breed in breeds">
+              <td>{{breed.name}}</td>
+
+            </tr>
+          </table>
+        </div>
+        
+        <div class="panel-body col-md-8">
+          <h3>Puppies</h3>
+          <table class="table table-bordered" ng-controller="puppyCtrl">
+            <tr ng-repeat="puppy in puppies">
+              <td>{{puppy.name}}</td>
+              <td>{{puppy.breed.name}}</td>
+              <td><button class='btn btn-default' ng-click="adoptPuppy(puppy.id)">Adopt</button></td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -33,6 +68,7 @@
 
   <!-- controllers -->
   <script src="controllers/breedsController.js"></script>
+  <script src="controllers/puppiesController.js"></script>
 
   <!-- directives -->
   <script src = "directives/puppyDirective.js"></script>
