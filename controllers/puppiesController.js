@@ -42,12 +42,6 @@ puppyApp.controller('puppyCtrl', [
       $scope.tableDisplay = true;
     }
 
-    $scope.submitPuppy = function(){
-      var newPuppy = {
-                        name: $scope.puppyName,
-                        breed_id: $scope.puppyBreed
-                     };
-
     $scope.newPuppy = {};
 
     $scope.submitPuppy = function(){
