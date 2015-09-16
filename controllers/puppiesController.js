@@ -18,9 +18,9 @@ puppyApp.controller('puppyCtrl', [
       breedsService.postNewBreed($scope.puppyBreed)
       .then(function(response){
         
-        console.log(response.data)
         $scope.breeds.push(response.data);
         console.log("created new breed");
+        console.log(response)
       
       }, function(){
         console.log("failed to post new breed");

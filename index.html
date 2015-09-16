@@ -16,11 +16,12 @@
     <div class="container" ng-controller="puppyCtrl">
       
       <div class="panel">
-        <div class="panel-heading">
+        <div class="panel-heading text-center">
           <h1>Puppy App</h1>
         </div>
+      </div>
 
-
+      <div class="panel-body text-center">
         <form class="form-inline">
           
           <div class="form-group">
@@ -34,7 +35,7 @@
             <!-- <select ng-model="puppyBreed">
               <option value="{{breed.id}}"ng-repeat="breed in breeds">{{breed.name}}</option>
             </select> -->
-            <input type="text" ng-model="puppyBreed" ng-click=toggleTable()>
+            <input type="text" class="form-control" ng-model="puppyBreed" ng-click=toggleTable()>
             <table ng-hide="tableDisplay">
               <tr ng-repeat = 'breed in breeds | filter: puppyBreed'>
                 <td ng-click="completePuppyBreed(breed)">{{breed.name}}</td>

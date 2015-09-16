@@ -10,19 +10,21 @@ puppyApp.factory("breedsService",
     };
 
     obj.postNewBreed = function(breed){
-      return $http({
+      // return $http({
         
-        method: 'POST',
+      //   method: 'POST',
         
-        url: 'https://pacific-stream-9205.herokuapp.com/breeds.json',
+      //   url: 'https://pacific-stream-9205.herokuapp.com/breeds.json',
         
-        headers: {
-          'Content-Type': 'application/json'
-        },
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
         
-        data: {breed: breed}
+      //   data: {breed: breed}
       
-      });
+      // });
+      console.log("new breed name:" + breed);
+      return $http.post('https://pacific-stream-9205.herokuapp.com/breeds.json', {name: breed});
     };
 
     return obj;
