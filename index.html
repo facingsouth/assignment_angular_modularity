@@ -30,12 +30,19 @@
          
           <div class="form-group">
             <label>Breed:</label>
-            <select ng-model="newPuppy.breed_id">
-              <option value="{{breed.id}}" ng-repeat="breed in breeds">{{breed.name}}</option>
-            </select>
+
+            <!-- <select ng-model="puppyBreed">
+              <option value="{{breed.id}}"ng-repeat="breed in breeds">{{breed.name}}</option>
+            </select> -->
+            <input type="text" ng-model="puppyBreed" ng-click=toggleTable()>
+            <table ng-hide="tableDisplay">
+              <tr ng-repeat = 'breed in breeds | filter: puppyBreed'>
+                <td ng-click="completePuppyBreed(breed)">{{breed.name}}</td>
+              </tr>
+            </table>
           </div><br>
           
-          <button class='btn btn-default' ng-click="submitPuppy()">Submit</button>
+          <button class='btn btn-default' ng-click="createNewBreed()">Submit</button>
         
         </form>
         
