@@ -16,12 +16,16 @@ puppyApp.factory("puppiesService",
         url: 'https://pacific-stream-9205.herokuapp.com/puppies.json',
         
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000'
         },
+
+        dataType: 'json',
         
-        data: puppy
+        data: JSON.stringify(puppy)
       
       });
+      // return $http.post('https://pacific-stream-9205.herokuapp.com/puppies.json', puppy);
     };
 
     obj.deletePuppy = function(id){
